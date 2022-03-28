@@ -17,7 +17,6 @@ router.post('/', function(req, res, next) {
 
   const hirdetes = new Hirdetes({_id, kategoria, cim, leiras, hirdetesDatuma, serulesMentes, arFt, kepUrl});
 
-
   hirdetes
   .save()
   .then(

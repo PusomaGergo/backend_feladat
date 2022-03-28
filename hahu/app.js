@@ -8,11 +8,11 @@ var usersRouter = require('./routes/users');
 var hahuRouter = require('./routes/hahu');
 
 var mongoose = require('mongoose');
-const MONGODB_URI = 'mongodb://127.0.0.1:27017';
+const MONGODB_URI = 'mongodb://127.0.0.1:27017/hahu';
 
 mongoose
     .connect(MONGODB_URI, { useNewUrlParser:true })
-    .then(console.log("Connected to MongoDB"))
+    .then(console.log("Connected to MongoDB :) "))
     .catch((err) => {
         console.log(err);
     });
@@ -24,6 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
